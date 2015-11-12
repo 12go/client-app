@@ -11,8 +11,5 @@
   },
   "rules": {
     "semi": [0]
-  },
-  "plugins": [
-    "react"
-  ]
+  }
 }

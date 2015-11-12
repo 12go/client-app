@@ -1,7 +1,7 @@
 {
-  "name": "ayayo-web",
+  "name": "client-app",
     "version": "1.0.0",
-    "description": "api.ai wrapper",
+    "description": "",
     "main": "index.js",
     "scripts": {
       "dev": ".bin/dev",
@@ -10,39 +10,35 @@
     },
     "repository": {
       "type": "git",
-      "url": "git+https://github.com/12go/ayayo.git"
+      "url": "git+https://github.com/12go/client-app.git"
     },
     "keywords": [
-      "api.ai"
       ],
     "author": "12go",
     "license": "MIT",
     "bugs": {
-      "url": "https://github.com/12go/ayayo/issues"
+      "url": "https://github.com/12go/client-app/issues"
     },
-    "homepage": "https://github.com/12go/ayayo#readme",
+    "homepage": "https://github.com/12go/client-app#readme",
     "dependencies": {
       "ampersand-router": "^3.0.2",
       "bluebird": "^3.0.5",
-      "lodash.assign": "^3.2.0",
+      "lodash": "^3.2.0",
       "qs": "^5.2.0",
-      "react": "^0.14.1",
-      "react-dom": "^0.14.1",
-      "redux": "^3.0.4",
-      "redux-devtools": "^2.1.5",
-      "redux-thunk": "^1.0.0",
-      "superagent": "^1.4.0"
+      "superagent": "^1.4.0",
+      "knockout": "^3.3.0",
+      "jsonapi-datastore": "latest",
+      "express": "latest",
+      "request": "latest"
     },
     "devDependencies": {
       "babel-core": "^6.0.14",
       "babel-eslint": "^4.1.3",
       "babel-loader": "^6.0.0",
       "babel-preset-es2015": "^6.0.14",
-      "babel-preset-react": "^6.0.14",
       "chai": "^3.4.0",
       "eslint": "^1.8.0",
       "eslint-config-airbnb": "^0.1.0",
-      "eslint-plugin-react": "^3.6.3",
       "mocha": "^2.3.3",
       "sinon": "^1.17.2",
       "spa-server": "^0.1.0",

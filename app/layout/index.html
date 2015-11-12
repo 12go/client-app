@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Search!</title>
+    <style type="text/css">
+      input {
+        width: 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main" id="main">
+      <div class="search">
+        <p>Search</p>
+        <input type="text" name="searchInput" class="searchInput" data-bind="value: query, valueUpdate: ['afterkeydown']"/>
+      </div>
+
+      <ul class="searchResult" id="searchResult" data-bind="foreach: results">
+        <li data-bind="text: title"></li>
+      </ul>
+    </div>
+  </body>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.3.0/knockout-min.js"></script>
+
+  <script type="text/javascript">
+    (function() {
+
+      document.onreadystatechange = function () {
+        if (document.readyState == "complete") {
+          initApplication();
+        }
+      };
+ 
+      function initApplication() {
+        var searchViewModel = function() {
+          this.query = ko.observable('hi!');
+          this.query.subscribe(function(newValue){
+            console.log('changed!', newValue);
+            search(newValue);
+          });
+          this.results = ko.observable([]);
+        };
+
+        window.vm = new searchViewModel();
+        ko.applyBindings(window.vm, document.getElementById('main'));
+      }
+
+      function search(query) {
+        makeRequest(query);
+      }
+
+      function makeRequest(query) {
+        var queryString = "?query=" + query;
+        var oReq = new XMLHttpRequest();
+
+        oReq.addEventListener("load", reqListener);
+        oReq.open("GET", "http://localhost:8080/search" + queryString);
+        oReq.send();
+
+        function reqListener(event) {
+          var response = event.target.responseText;
+          var list = processResponseList(response);
+
+          vm.results(list);
+        }
+      }
+
+      function processResponseList(response) {
+        var results = [];
+        var parsed = JSON.parse(response);
+        return parsed;
+
+//        ko.utils.arrayForEach(parsed, function(item) {
+//          results.push(item);
+//        });
+//
+//        return results;
+      }
+
+    })();
+</script>
+
+</html>
