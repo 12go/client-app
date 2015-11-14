@@ -1,4 +1,5 @@
 node_modules
 dist/app.min.js.map
+dist/app.js.map
 config/
 *.DS_Store

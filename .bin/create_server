@@ -1,0 +1,12 @@
+#!/usr/bin/env node
+
+var serverFactory = require('spa-server')
+
+var server = serverFactory.create({
+  path: './dist',
+  hostname: 'localhost',
+  port: 3000,
+  fallback: '/200.html',
+})
+
+server.start()

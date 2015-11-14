@@ -1,18 +1,18 @@
-var fs = require('fs');
-var request = require('request');
-var JsonApiService = require('../lib/json_api_service');
+import fs from 'fs'
+import request from 'request'
+import JsonApiService from './json_api_service'
 
-var TOKEN = require('../config')['TOKEN'];
+const TOKEN = require('../config')['TOKEN'];
 
-function App() {
-  
-  function home(req, res) {
+export default {
+
+  home(req, res) {
     fs.readFile(__dirname + '/layout/index.html', 'utf8', function(err, text){
       res.send(text);
     });
   }
 
-  function search(req, res) {
+  search(req, res) {
     var query = req.query.query;
     var queryString = '?filter[contains]=' + query;
 
@@ -38,11 +38,4 @@ function App() {
 
     request(options, callback);
   }
-
-  return {
-    home: home,
-    search: search
-  };
-};
-
-module.exports = App();
+}

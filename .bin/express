@@ -16,7 +16,7 @@ function go() {
     var
       host = server.address().address,
       port = server.address().port;
-      
+
     console.log('app listening at http://%s:%s', host, port);
   });
 }
