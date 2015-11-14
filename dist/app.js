@@ -23969,7 +23969,11 @@
 
 	var _components = __webpack_require__(/*! ../../components */ 199);
 
+	var _components2 = _interopRequireDefault(_components);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var InputText = _components2.default.InputText;
 
 	var styles = {
 	  section: {
@@ -23991,7 +23995,7 @@
 	      _react2.default.createElement(
 	        'p',
 	        null,
-	        _react2.default.createElement(_components.InputText, props)
+	        _react2.default.createElement(InputText, props)
 	      )
 	    );
 	  }
@@ -24020,7 +24024,10 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	exports.default = { Link: _link2.default, InputText: _inputText2.default };
+	exports.default = {
+	  Link: _link2.default,
+	  InputText: _inputText2.default
+	};
 
 /***/ },
 /* 200 */
@@ -24034,27 +24041,26 @@
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	exports.Link = undefined;
 
 	var _react = __webpack_require__(/*! react */ 39);
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _ = __webpack_require__(/*! ../ */ 199);
+	var _app = __webpack_require__(/*! ../../app.js */ 1);
 
-	var _2 = _interopRequireDefault(_);
+	var _app2 = _interopRequireDefault(_app);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var Link = exports.Link = _react2.default.createClass({
-	  displayName: 'Link',
+	exports.default = _react2.default.createClass({
+	  displayName: 'link',
 	  handleClick: function handleClick(event) {
 	    var external = this.props.external;
 
 	    if (external) return;
 
 	    event.preventDefault();
-	    _2.default.router.navigate(event.target.pathname);
+	    _app2.default.router.navigate(event.target.pathname);
 	  },
 	  render: function render() {
 	    var _props = this.props;
@@ -24081,30 +24087,29 @@
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	exports.InputText = undefined;
 
 	var _react = __webpack_require__(/*! react */ 39);
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _ = __webpack_require__(/*! ../ */ 199);
+	var _app = __webpack_require__(/*! ../../app.js */ 1);
 
-	var _2 = _interopRequireDefault(_);
+	var _app2 = _interopRequireDefault(_app);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var InputText = exports.InputText = _react2.default.createClass({
-	  displayName: 'InputText',
-	  handleInput: function handleInput(event) {
+	exports.default = _react2.default.createClass({
+	  displayName: 'inputText',
+	  handleKeyUp: function handleKeyUp(event) {
 	    event.preventDefault();
-	    _2.default.router.navigate('http://localhost:3000/search?filter[contains]=' + input.value);
+	    _app2.default.router.navigate('http://localhost:3000/search?filter[contains]=' + input.value);
 	  },
 	  render: function render() {
 	    var _props = this.props;
 	    var name = _props.name;
 	    var title = _props.title;
 
-	    return _react2.default.createElement('input', { placeholder: title, type: 'text', name: name, 'class': name, onInput: this.handleInput });
+	    return _react2.default.createElement('input', { placeholder: title, type: 'text', name: name, className: name, onkeyup: this.handleKeyUp });
 	  }
 	});
 

@@ -1,8 +1,8 @@
 import React from 'react'
 
-import app from '../'
+import app from '../../app.js'
 
-export const Link = React.createClass({
+export default React.createClass({
   handleClick(event) {
     const { external } = this.props
 

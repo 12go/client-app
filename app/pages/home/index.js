@@ -1,5 +1,6 @@
 import React from 'react'
-import { InputText } from '../../components'
+import Comps from '../../components'
+const InputText = Comps.InputText
 
 const styles = {
   section: {
@@ -16,7 +17,7 @@ export default React.createClass({
   render() {
     return (
       <section style={styles.section}>
-        <p><InputText {...props} /></p>
+        <p><InputText {...props}/></p>
       </section>
     )
   },
