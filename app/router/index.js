@@ -5,7 +5,7 @@ import routeHandlers from './route_handlers'
 const routerConfig = assign({}, routeHandlers, {
   routes: {
     '': 'home',
-    'search': 'search',
+    'search?:queryString': 'search',
   },
 })
 
