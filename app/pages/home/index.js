@@ -19,6 +19,11 @@ export default React.createClass({
       <section style={styles.section}>
         <p><InputText {...props}/></p>
       </section>
+      // TODO:
+      // How to make the view populate like this?
+//      <ul class="searchResult" id="searchResult" data-bind="foreach: results">
+//        <li data-bind="text: title"></li>
+//      </ul>
     )
   },
 })

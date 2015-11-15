@@ -23997,7 +23997,13 @@
 	        null,
 	        _react2.default.createElement(InputText, props)
 	      )
-	    );
+	    )
+	    // TODO:
+	    // How to make the view populate like this?
+	    //      <ul class="searchResult" id="searchResult" data-bind="foreach: results">
+	    //        <li data-bind="text: title"></li>
+	    //      </ul>
+	    ;
 	  }
 	});
 
@@ -24098,6 +24104,12 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+	var styles = {
+	  input: {
+	    width: '200px'
+	  }
+	};
+
 	exports.default = _react2.default.createClass({
 	  displayName: 'inputText',
 	  handleKeyUp: function handleKeyUp(event) {
@@ -24109,7 +24121,7 @@
 	    var name = _props.name;
 	    var title = _props.title;
 
-	    return _react2.default.createElement('input', { placeholder: title, type: 'text', name: name, className: name, onkeyup: this.handleKeyUp });
+	    return _react2.default.createElement('input', { style: styles.input, placeholder: title, type: 'text', name: name, className: name, onkeyup: this.handleKeyUp });
 	  }
 	});
 

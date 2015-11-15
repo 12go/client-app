@@ -2,6 +2,12 @@ import React from 'react'
 
 import app from '../../app.js'
 
+const styles = {
+  input: {
+    width: '200px',
+  },
+}
+
 export default React.createClass({
   handleKeyUp(event) {
     event.preventDefault()
@@ -12,7 +18,7 @@ export default React.createClass({
     const { name, title } = this.props
 
     return (
-      <input placeholder={title} type="text" name={name} className={name} onkeyup={this.handleKeyUp}/>
+      <input style={styles.input} placeholder={title} type="text" name={name} className={name} onkeyup={this.handleKeyUp}/>
     )
   },
 })
