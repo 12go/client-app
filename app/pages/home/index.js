@@ -18,6 +18,7 @@ export default React.createClass({
     return (
       <section style={styles.section}>
         <p><InputText {...props}/></p>
+        <p></p>
       </section>
       // TODO:
       // How to make the view populate like this?
